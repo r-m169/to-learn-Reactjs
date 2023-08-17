@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.card {
+    width: calc(80.33% - 20px);
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px 10px #F7F1E4;
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.equal-height {
+    display: flex;
+}
+
+.equal-height .card {
+    height: 100%;
+
+}
+
+.equal-height .card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.row {
+    margin-left: 7%;
+    margin-top: 12%;
+}
+
+.card-footer {
+    background-color: white;
+    border: none;
+}
+p{
+    color: #448677;
+}
+.card-title{
+    color: #448677;
+}
+
+.btn {
+    margin-top: -19%;
+    color: #448677;
+    border: 1px solid #448677;
+    transition: transform 0.4s ease-in-out;
+    
+
+}
+
+.btn:hover {
+    box-shadow: 2px 2px 10px 10px #F7F1E4;
+    transform: scale(1.05);
+    color: #448677;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: #F7F1E4;
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(#448677,#F7F1E4);
+}
+::-webkit-scrollbar-corner{
+    border-radius: 12px;
+}
