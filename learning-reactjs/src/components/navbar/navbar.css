@@ -1,0 +1,47 @@
+* {
+   
+    font-family: 'Poppins', sans-serif;
+    background-attachment: fixed;
+}
+.navbar-brand{
+    color: #77b0a297;
+
+}
+/* Add space between nav-links */
+.nav-link {
+    color: #77b0a297;
+    margin-right: 80px;
+    /* background-color: white; */
+    transition: transform 0.4s ease-in-out;
+    border: none;
+    position: relative;
+    /* position: fixed; */
+}
+.nav-link:hover{
+    color: #458f7c97;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #F7F1E4;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #F7F1E4;
+    transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+    .nav-link {
+        color: white;
+    }
+}
