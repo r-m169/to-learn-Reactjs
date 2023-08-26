@@ -1,79 +1,63 @@
-import React from 'react';
-import { useFormik } from "formik";
-import { useState } from "react";
-import * as Yup from "yup";
-import './login.css'
-import { login } from '../../../services/auth.service';
+import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
-    const [userData, setUserData] = useState(null);
+const LoginComponent = () => {
+  const navigate = useNavigate();
 
-    const loginForm = useFormik({
-        initialValues: {
-            username: "",
-            password: "",
-        },
-        onSubmit: async (formValues) => {
-            const data = await login(formValues);
-            setUserData(data);
-        },
-        validationSchema: Yup.object().shape({
-            username: Yup.string().required("Username is required"),
-            email: Yup.string().required("Email is required"),
-            password: Yup.string().required("Password is required"),
-        }),
-    });
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().required('Email is required').email('Invalid email address'),
+      password: Yup.string().required('Password is required'),
+    }),
+    onSubmit: (values) => {
+      // Retrieve registration data from local storage
+      const registrationData = JSON.parse(localStorage.getItem('registrationData'));
 
-    return (
-        <div className="login-container">
-            <form onSubmit={loginForm.handleSubmit} className="login-form">
-                <div className="form-group">
-                    <label htmlFor="username"></label>
-                    <input
-                        value={loginForm.values.username}
-                        onChange={loginForm.handleChange}
-                        onBlur={loginForm.handleBlur}
-                        name="username"
-                        type="text"
-                        id="username"
-                        className="input-field"
-                        placeholder='Username'
-                    />
-                    {loginForm.touched.username && loginForm.errors.username && (
-                        <div className="alert alert-danger my-1" role="alert">
-                            {loginForm.errors.username}
-                        </div>
-                    )}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password"></label>
-                    <input
-                        value={loginForm.values.password}
-                        onChange={loginForm.handleChange}
-                        onBlur={loginForm.handleBlur}
-                        name="password"
-                        type="password"
-                        id="password"
-                        className='input-field'
-                        placeholder='Password'
-                    />
-                    {loginForm.touched.password && loginForm.errors.password && (
-                        <div className="alert alert-danger my-1" role="alert">
-                            {loginForm.errors.password}
-                        </div>
-                    )}
-                </div>
-                <div className="saver">
-                    <button
-                        disabled={!loginForm.isValid}
-                        className="btn btn-primary"
-                    >
-                        Login
-                    </button>
-                </div>
-            </form>
+      if (
+        registrationData &&
+        registrationData.email === values.email &&
+        registrationData.password === values.password
+      ) {
+        // Successful login
+        formik.resetForm();
+        alert('Login successful!');
+        navigate('/products');
+      } else {
+        // Failed login
+        alert('Invalid email or password');
+      }
+    },
+  });
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={formik.handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input type="email" {...formik.getFieldProps('email')} />
+          {formik.touched.email && formik.errors.email ? (
+            <div>{formik.errors.email}</div>
+          ) : null}
         </div>
-    );
+        <div>
+          <label>Password:</label>
+          <input type="password" {...formik.getFieldProps('password')} />
+          {formik.touched.password && formik.errors.password ? (
+            <div>{formik.errors.password}</div>
+          ) : null}
+        </div>
+        <button type="submit">Login</button>
+        <Link to='/register'>register</Link>
+      </form>
+    </div>
+  );
 };
 
-export default Login;
+export default LoginComponent;
