@@ -6,13 +6,13 @@ const AboutUs = () => {
         <div className="about-container">
             <div className="about-content">
                 <div className="about-text">
-                    <h2>About Me</h2>
+                    <h2>About us</h2>
                     <p>
-                        I am a dedicated front-end developer committed to crafting superior and innovative user experiences. I have received intensive training from the Information Technology Institute (ITI), where I acquired strong skills in developing user interfaces using the latest technologies. I have successfully completed several small projects, enhancing my proficiency in front-end development techniques and code organization methods. Utilizing libraries like React, I have built creative interactive interfaces that provide smooth and exceptional user experiences. My passion for creating appealing and functional interfaces drives me to continuously expand my knowledge and skills to deliver effective and outstanding solutions for improving user experiences on the web.
+                    An e-commerce website is a digital platform that facilitates online buying and selling of goods and services. It serves as a virtual marketplace where businesses and consumers can interact, browse products, make purchases, and conduct financial transactions without the need for physical presence. E-commerce websites offer a wide range of products, from electronics and clothing to groceries and specialized services, catering to diverse consumer needs. These websites typically feature user-friendly interfaces, detailed product descriptions, high-quality images, customer reviews, and secure payment gateways to ensure a seamless shopping experience. With the convenience of 24/7 accessibility from anywhere with an internet connection, e-commerce websites have transformed the way people shop, enabling them to compare prices, explore options, and make informed purchasing decisions at their own pace. As a result, e-commerce has become an integral part of modern commerce, connecting businesses and customers on a global scale and reshaping traditional retail landscapes.
                     </p>
                 </div>
                 <div className="about-image">
-                    <img src="" alt="Front-end Developer" />
+                   
                 </div>
             </div>
         </div>

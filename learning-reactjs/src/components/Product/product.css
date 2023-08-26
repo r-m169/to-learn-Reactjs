@@ -1,10 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
+/* body{
+    background-color: #448677;
+} */
 .card {
     width: calc(80.33% - 20px);
     margin: 10px;
@@ -13,6 +9,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 1px 1px 10px 10px #F7F1E4;
+    color: #272829;
 }
 
 
@@ -60,28 +57,16 @@ p{
 }
 
 .btn {
-    margin-top: -19%;
-    color: #448677;
-    border: 1px solid #448677;
+    /* margin-top: -19%; */
+    color: #272829;
+    border: 1px solid #272829;
     transition: transform 0.4s ease-in-out;
     
 
 }
 
 .btn:hover {
-    box-shadow: 2px 2px 10px 10px #F7F1E4;
+    box-shadow: 2px 2px 10px 10px #272829;
     transform: scale(1.05);
-    color: #448677;
-}
-::-webkit-scrollbar{
-    width: 15px;
-}
-::-webkit-scrollbar-track{
-    background-color: #F7F1E4;
-}
-::-webkit-scrollbar-thumb{
-    background-image: linear-gradient(#448677,#F7F1E4);
-}
-::-webkit-scrollbar-corner{
-    border-radius: 12px;
+    color: #272829;
 }

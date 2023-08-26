@@ -9,7 +9,7 @@
 }
 /* Add space between nav-links */
 .nav-link {
-    color: #77b0a297;
+    color: #272829;
     margin-right: 80px;
     /* background-color: white; */
     transition: transform 0.4s ease-in-out;
@@ -36,7 +36,7 @@
 }
 
 .nav-link:hover {
-    color: #F7F1E4;
+    color: #272829;
     transform: scale(1.05);
 }
 

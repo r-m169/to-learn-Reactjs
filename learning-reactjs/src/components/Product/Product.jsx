@@ -25,9 +25,10 @@ const Product = (props) => {
           <p className="card-title">${productData.price}</p>
 
         </div>
+        <br />
         <div className="card-footer">
           <a href="#" className="btn">
-            Add to Cart
+            Add 
           </a>
         </div>
       </div>
@@ -35,7 +36,7 @@ const Product = (props) => {
   ));
 
   return (
-    <div className="container text-center">
+    <div className="container text-center ">
       <div className="row equal-height justify-content-center">{productsData}</div>
     </div>
   );

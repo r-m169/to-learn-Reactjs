@@ -1,6 +1,7 @@
 body {
     /* background-image: url(../../../../public/alter.jpg); */
     background-image: linear-gradient(#D8D9DA,#FFF6E0);
+
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,34 +27,35 @@ body {
 input {
     text-align: center;
     border-radius: 5px;
-    border: 1px solid #A176C8;
+    border: 1px solid #272829;
     padding-top: 10px;
     background-color: transparent;
     padding-bottom: 10px;
     width: 290px;
 }
 input::placeholder{
-    color: white;
+    color: #272829;
 }
 
 button {
-    border: 1px solid #A176C8;
+    border: 1px solid #272829;
     background-color: transparent;
-    color: white;
+    color: #272829;
     padding: 6px 80px 6px 80px;
     border-radius: 3px;
     margin-left: 40px;
     transition: transform 0.4s ease-in-out;
+
 }
 
 button:hover {
-    color: #A176C8;
+    color: #D8D9DA;
     background-color: white;
-    box-shadow: 2px 2px 10px 10px #A176C8;
+    box-shadow: 2px 2px 10px 10px #D8D9DA;
     transform: scale(1.05);
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: #272829;
 }

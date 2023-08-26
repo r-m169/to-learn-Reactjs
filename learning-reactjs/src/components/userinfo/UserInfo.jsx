@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Footer from '../footer/Footer';
+import './info.css'
 
 const UserInfoComponent = () => {
   // Retrieve user data from local storage
@@ -24,7 +26,7 @@ const UserInfoComponent = () => {
   };
 
   return (
-    <div>
+    <div className='center-container'>
       <h2>User Information</h2>
       {userData ? (
         <div>
@@ -58,6 +60,7 @@ const UserInfoComponent = () => {
       ) : (
         <div>No user data available</div>
       )}
+       <Footer /> {/* Add the Footer component here */}
     </div>
   );
 };

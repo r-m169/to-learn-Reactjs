@@ -1,10 +1,11 @@
-import React from 'react';
+import {React} from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate ,Link} from 'react-router-dom';
+import './register.css'
 
 const Register = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const formik = useFormik({
     initialValues: {
@@ -32,32 +33,36 @@ const Register = () => {
   });
 
     return (
-        <div>
-        <h2>Register</h2>
+        <div className='container1'>
+  
         <form onSubmit={formik.handleSubmit}>
           <div>
-            <label>Email:</label>
-            <input type="email" {...formik.getFieldProps('email')} />
+            <label></label>
+            <input type="email" {...formik.getFieldProps('email')} placeholder='email'required/>
             {formik.touched.email && formik.errors.email ? (
               <div>{formik.errors.email}</div>
             ) : null}
           </div>
+          <br />
           <div>
-            <label>Username:</label>
-            <input type="text" {...formik.getFieldProps('username')} />
+            <label></label>
+            <input type="text" {...formik.getFieldProps('username')} placeholder='username' required/>
             {formik.touched.username && formik.errors.username ? (
               <div>{formik.errors.username}</div>
             ) : null}
           </div>
+          <br />
           <div>
-            <label>Password:</label>
-            <input type="password" {...formik.getFieldProps('password')} />
+            <label></label>
+            <input type="password" {...formik.getFieldProps('password')} placeholder='passward' required/>
             {formik.touched.password && formik.errors.password ? (
               <div>{formik.errors.password}</div>
             ) : null}
           </div>
+          <br />
           <button type="submit">Register</button>
         </form>
+        <Link to='/'><a >Already have an account? </a></Link>
       </div>
     );
 };
